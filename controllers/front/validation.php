@@ -23,7 +23,7 @@ class PPPostepayValidationModuleFrontController extends ModuleFrontController
       || $cart->id_address_delivery == 0
       || $cart->id_address_invoice == 0) 
     {
-        Tools::redirect('index.php?controller=order&step=1');
+      Tools::redirect('index.php?controller=order&step=1');
     }
 
     foreach (Module::getPaymentModules() as $module) {
@@ -40,7 +40,7 @@ class PPPostepayValidationModuleFrontController extends ModuleFrontController
     $customer = new Customer($cart->id_customer);
 
     if (!Validate::isLoadedObject($customer)) {
-        Tools::redirect('index.php?controller=order&step=1');
+      Tools::redirect('index.php?controller=order&step=1');
     }
 
     $mailVars = array(
